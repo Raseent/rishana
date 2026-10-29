@@ -1,0 +1,419 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rishana & Nihal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@300;400;500&family=Noto+Serif+Malayalam:wght@400;600&display=swap">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* Layout: one long scroll of centred invitation panels between two gold kasavu rails,
+     opened by a curtain that parts over the names. Single dark emerald look by choice. */
+  :root {
+    --ink: #06241d;
+    --leaf: #0d3a2e;
+    --gold: #d6aa4f;
+    --gold-soft: #f1d98f;
+    --gold-dim: rgba(214, 170, 79, 0.35);
+    --ivory: #f7f0dd;
+    --mute: #a4bbb0;
+    --f-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --f-body: "Jost", "Helvetica Neue", Arial, sans-serif;
+    --f-ml: "Noto Serif Malayalam", "Kartika", serif;
+    --f-ar: "Amiri", "Traditional Arabic", serif;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: var(--ink);
+    background-image: radial-gradient(120% 70% at 50% 0%, var(--leaf) 0%, var(--ink) 65%);
+    background-attachment: fixed;
+    color: var(--ivory);
+    font-family: var(--f-body);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.65;
+    padding-block: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    overflow-x: hidden;
+  }
+
+  /* kasavu rails */
+  body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 7px;
+    z-index: 5;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(0deg, var(--gold) 0 3px, transparent 3px 9px) 0 0 / 3px 100% no-repeat,
+      linear-gradient(var(--gold-dim), var(--gold-dim)) 6px 0 / 1px 100% no-repeat;
+  }
+  body::before { left: env(safe-area-inset-left, 0px); }
+  body::after  { right: env(safe-area-inset-right, 0px); transform: scaleX(-1); }
+
+  canvas#motes { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+  main { position: relative; z-index: 1; max-width: 640px; margin-inline: auto; }
+
+  section { padding-block: clamp(3rem, 9vw, 5rem); text-align: center; }
+  section + section { border-top: 1px solid var(--gold-dim); }
+
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 0.4rem;
+  }
+  .ml { font-family: var(--f-ml); font-weight: 400; }
+  .ar { font-family: var(--f-ar); font-weight: 400; direction: rtl; }
+
+  h2 {
+    font-family: var(--f-display); font-style: italic; font-weight: 400;
+    font-size: clamp(1.9rem, 6.5vw, 2.6rem); line-height: 1.15; margin: 0.6rem 0 1.4rem;
+    color: var(--gold-soft); text-wrap: balance;
+  }
+  p { margin: 0 0 1rem; text-wrap: pretty; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; padding-top: clamp(3rem, 10vw, 5rem); overflow: hidden; }
+  .hero > * { position: relative; z-index: 1; }
+  .mandala {
+    position: absolute !important; z-index: 0 !important;
+    left: 50%; top: 55%;
+    width: min(130vw, 760px); aspect-ratio: 1; max-width: none;
+    transform: translate(-50%, -50%);
+    color: var(--gold); opacity: 0.3; pointer-events: none;
+  }
+  .mandala g { transform-origin: 200px 200px; }
+  .mandala .a { animation: spin 140s linear infinite; }
+  .mandala .b { animation: spin 200s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .bismi { font-size: clamp(1.7rem, 7vw, 2.4rem); line-height: 1.5; color: var(--gold-soft); margin: 0 0 0.2rem; }
+  .invite-ml { font-size: clamp(1.1rem, 4vw, 1.3rem); color: var(--ivory); margin: 0 0 0.8rem; }
+  .hero .names { margin: clamp(1.6rem, 6vw, 2.6rem) 0; display: grid; justify-items: center; gap: 0.1rem; }
+  .name {
+    display: block; overflow: hidden; padding: 0.06em 0.08em 0.14em;
+    font-family: var(--f-display); font-style: italic; font-weight: 400;
+    font-size: clamp(2.5rem, 12vw, 5rem); line-height: 1.05; letter-spacing: -0.01em;
+    color: var(--ivory); max-width: 100%;
+  }
+  .name .ch { display: inline-block; }
+  .amp {
+    display: flex; align-items: center; gap: 1rem; width: min(280px, 70%);
+    font-family: var(--f-display); font-style: italic; font-size: 1.8rem; color: var(--gold);
+  }
+  .amp::before, .amp::after { content: ""; flex: 1; height: 1px; background: var(--gold-dim); }
+  .lead { max-width: 32ch; margin-inline: auto; color: var(--mute); }
+  .when {
+    margin-top: 1.6rem; display: inline-grid; gap: 0.15rem;
+    padding: 0.9rem 1.6rem; border: 1px solid var(--gold-dim);
+  }
+  .when strong { font-family: var(--f-display); font-weight: 500; font-size: 1.35rem; color: var(--gold-soft); letter-spacing: 0.02em; }
+  .when span { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute); }
+
+  /* ---------- event ---------- */
+  .events { text-align: left; }
+  .events .head { text-align: center; }
+  .event {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1rem, 5vw, 2rem);
+    align-items: center; padding-block: 1.8rem; border-block: 1px solid var(--gold-dim);
+  }
+  .date { text-align: center; min-width: 5rem; }
+  .date b { display: block; font-family: var(--f-display); font-weight: 400; font-size: clamp(3.6rem, 15vw, 5rem); line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+  .date span { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mute); }
+  .event h3 { font-family: var(--f-display); font-weight: 500; font-style: italic; font-size: 1.6rem; line-height: 1.2; margin: 0 0 0.25rem; color: var(--ivory); }
+  .event .time { font-weight: 500; letter-spacing: 0.06em; color: var(--gold-soft); margin: 0 0 0.25rem; }
+  .event p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+
+  /* ---------- countdown ---------- */
+  .count { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(0.4rem, 2vw, 1rem); max-width: 480px; margin: 0 auto; }
+  .unit { padding: 1rem 0.2rem 0.8rem; border: 1px solid var(--gold-dim); }
+  .unit b { display: block; font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 9vw, 3rem); line-height: 1.05; color: var(--gold-soft); font-variant-numeric: tabular-nums lining-nums; }
+  .unit span { font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); }
+  .unit.sec b { animation: pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: 0.55; } }
+  .done { font-family: var(--f-display); font-style: italic; font-size: 1.6rem; color: var(--gold-soft); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; padding: 0.55rem 1.4rem;
+    font: 500 0.78rem/1 var(--f-body); letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+    color: var(--gold-soft); background: transparent; border: 1px solid var(--gold); border-radius: 2px;
+    transition: background-color .25s, color .25s;
+  }
+  .btn:hover { background: var(--gold); color: var(--ink); }
+  .btn.solid { background: var(--gold); color: var(--ink); }
+  .btn.solid:hover { background: var(--gold-soft); }
+  :where(a, button):focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+
+  .rsvp { display: grid; gap: 0.9rem; justify-items: center; }
+  .phone { font-family: var(--f-display); font-size: 1.9rem; color: var(--ivory); font-variant-numeric: lining-nums; letter-spacing: 0.04em; user-select: all; }
+  .who { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); }
+
+  footer { padding-block: 2.5rem 4rem; text-align: center; color: var(--mute); border-top: 1px solid var(--gold-dim); }
+  footer .sign { font-family: var(--f-display); font-style: italic; font-size: 1.6rem; line-height: 1.3; color: var(--gold-soft); margin-bottom: 0.4rem; text-wrap: balance; }
+  .replay { margin-top: 1.4rem; }
+
+  /* ---------- curtain ---------- */
+  .curtain { position: fixed; inset: 0; z-index: 50; display: flex; pointer-events: none; }
+  .cp {
+    flex: 1; position: relative;
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.22) 0 2px, transparent 2px 26px),
+      linear-gradient(180deg, #0c3a2e, #072a21);
+  }
+  .cp.l { border-right: 3px solid var(--gold); }
+  .cp.r { border-left: 3px solid var(--gold); }
+  .mono {
+    position: absolute; inset: 0; z-index: 2; display: grid; place-content: center; justify-items: center; gap: 0.6rem;
+    text-align: center; color: var(--gold-soft);
+  }
+  .mono b { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: clamp(3rem, 14vw, 5rem); line-height: 1; }
+  .mono span { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+  .mono .ar { font-size: 2rem; letter-spacing: 0; text-transform: none; color: var(--gold-soft); }
+
+  /* ---------- motion (only when JS is running) ---------- */
+  .js .cp.l, .js .cp.r { transform: translateX(0); }
+  .js.play .cp.l { animation: openL 1.5s 0.8s cubic-bezier(.75,0,.2,1) forwards; }
+  .js.play .cp.r { animation: openR 1.5s 0.8s cubic-bezier(.75,0,.2,1) forwards; }
+  .js.play .mono { animation: fadeOut 0.6s 0.45s ease forwards; }
+  @keyframes openL { to { transform: translateX(-102%); } }
+  @keyframes openR { to { transform: translateX(102%); } }
+  @keyframes fadeOut { to { opacity: 0; } }
+
+  .js .name .ch { transform: translateY(115%); }
+  .js.play .name .ch { animation: rise 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(1.5s + var(--i) * 70ms); }
+  @keyframes rise { from { transform: translateY(115%); } to { transform: none; } }
+
+  .js .fade { opacity: 0; }
+  .js.play .fade { animation: fadeUp 1s ease both; animation-delay: var(--d, 0s); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  [data-reveal] { transition: opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+  [data-reveal].pre { opacity: 0; transform: translateY(26px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .curtain { display: none; }
+    .js .name .ch, .js .fade { transform: none; opacity: 1; animation: none !important; }
+    .mandala .a, .mandala .b, .unit.sec b { animation: none; }
+    [data-reveal].pre { opacity: 1; transform: none; }
+  }
+</style>
+
+<canvas id="motes" aria-hidden="true"></canvas>
+
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="cp l"></div>
+  <div class="cp r"></div>
+  <div class="mono"><span class="ar" lang="ar">بسم الله الرحمن الرحيم</span><b>R &amp; N</b><span>12 · 12 · 2026</span></div>
+</div>
+
+<main>
+  <section class="hero">
+    <svg class="mandala" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
+      <g class="a">
+        <circle cx="200" cy="200" r="192" stroke-width="1" stroke-dasharray="1 9"/>
+        <circle cx="200" cy="200" r="170" stroke-width="0.8"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(45 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(90 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(135 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(180 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(225 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(270 200 200)"/>
+        <ellipse cx="200" cy="90" rx="22" ry="62" stroke-width="0.8" transform="rotate(315 200 200)"/>
+      </g>
+      <g class="b">
+        <circle cx="200" cy="200" r="120" stroke-width="0.8" stroke-dasharray="3 7"/>
+        <circle cx="200" cy="200" r="96" stroke-width="0.8"/>
+        <rect x="136" y="136" width="128" height="128" stroke-width="0.7"/>
+        <rect x="136" y="136" width="128" height="128" stroke-width="0.7" transform="rotate(45 200 200)"/>
+      </g>
+    </svg>
+
+    <p class="bismi ar fade" lang="ar" style="--d:2.1s">بسم الله الرحمن الرحيم</p>
+    <p class="invite-ml ml fade" style="--d:2.2s">വിവാഹ ക്ഷണം</p>
+    <p class="eyebrow fade" style="--d:2.3s">Wedding invitation</p>
+
+    <h1 class="names" aria-label="Rishana and Nihal Muhammed">
+      <span class="name" data-split>Rishana</span>
+      <span class="amp fade" style="--d:2.7s" aria-hidden="true">&amp;</span>
+      <span class="name" data-split>Nihal Muhammed</span>
+    </h1>
+
+    <p class="lead fade" style="--d:3s">Granddaughter of Cheriyath Moideen, with Nihal Muhammed</p>
+    <div class="when fade" style="--d:3.2s">
+      <strong>Saturday, 12 December 2026</strong>
+      <span>3 Rajab 1448 · 5:00 PM onwards</span>
+    </div>
+  </section>
+
+  <section data-reveal>
+    <p class="eyebrow">With the blessings of Allah</p>
+    <h2>Please join us</h2>
+    <p>With the blessings of Almighty Allah, we, the family of the bride, warmly invite you and your family to the wedding of our dear Rishana, granddaughter of Cheriyath Moideen, with Nihal Muhammed. Your presence and duas will make the day complete.</p>
+    <p class="ml" style="color:var(--gold-soft)">ഞങ്ങളുടെ കുടുംബത്തിലെ വിവാഹത്തിലേക്ക് നിങ്ങളെ സ്നേഹപൂർവം ക്ഷണിക്കുന്നു.</p>
+  </section>
+
+  <section class="events" data-reveal>
+    <div class="head">
+      <p class="eyebrow">The day</p>
+      <h2>Save the date</h2>
+    </div>
+    <div class="event">
+      <div class="date"><b>12</b><span>Dec · Sat</span></div>
+      <div>
+        <h3>Wedding</h3>
+        <p class="time">5:00 PM onwards</p>
+        <p>3 Rajab 1448 AH. Rishana &amp; Nihal Muhammed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal>
+    <p class="eyebrow">Counting down</p>
+    <h2>Until the big day</h2>
+    <div class="count" id="count" role="timer" aria-live="off">
+      <div class="unit"><b id="cd-d">00</b><span>Days</span></div>
+      <div class="unit"><b id="cd-h">00</b><span>Hours</span></div>
+      <div class="unit"><b id="cd-m">00</b><span>Min</span></div>
+      <div class="unit sec"><b id="cd-s">00</b><span>Sec</span></div>
+    </div>
+  </section>
+
+  <section data-reveal>
+    <p class="eyebrow">Contact</p>
+    <h2>For more details</h2>
+    <div class="rsvp">
+      <span class="who">Call the bride's family</span>
+      <span class="phone" id="phone">9656513356</span>
+      <div class="actions">
+        <button class="btn solid" id="copy" type="button">Copy number</button>
+        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rishana+%26+Nihal+Muhammed+Wedding&dates=20261212T113000Z/20261212T153000Z&details=3+Rajab+1448.+5%3A00+PM+onwards.+Contact%3A+9557445454">Add to calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer data-reveal>
+    <div class="sign">With love and duas, the family of Cheriyath Moideen</div>
+    <p class="ml" style="color:var(--gold-soft);margin:0">സ്നേഹത്തോടെ</p>
+    <button class="btn replay" id="replay" type="button">Replay opening</button>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 12 December 2026, 5:00 PM India Standard Time
+  var WEDDING = new Date('2026-12-12T17:00:00+05:30').getTime();
+
+  // split names into letters
+  document.querySelectorAll('[data-split]').forEach(function (el, n) {
+    var text = el.textContent, i = n * 5;
+    el.setAttribute('aria-hidden', 'true');
+    el.textContent = '';
+    text.split('').forEach(function (c) {
+      if (c === ' ') { el.appendChild(document.createTextNode(' ')); i++; return; }
+      var s = document.createElement('span');
+      s.className = 'ch'; s.textContent = c; s.style.setProperty('--i', i++);
+      el.appendChild(s);
+    });
+  });
+
+  // curtain
+  var curtain = document.getElementById('curtain');
+  var right = curtain.querySelector('.cp.r');
+  right.addEventListener('animationend', function () { curtain.hidden = true; });
+  function play() {
+    curtain.hidden = reduce;
+    root.classList.remove('play');
+    void root.offsetWidth;
+    root.classList.add('play');
+  }
+  requestAnimationFrame(function () { requestAnimationFrame(play); });
+  document.getElementById('replay').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    setTimeout(play, reduce ? 0 : 500);
+  });
+
+  // reveal sections below the fold
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.92) {
+        el.classList.add('pre'); io.observe(el);
+      }
+    });
+  }
+
+  // countdown
+  var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+      m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  var timer;
+  function tick() {
+    var diff = WEDDING - Date.now();
+    if (diff <= 0) {
+      document.getElementById('count').innerHTML = '<p class="done" style="grid-column:1/-1;margin:0">Today we celebrate. Thank you for your duas.</p>';
+      clearInterval(timer); return;
+    }
+    var t = Math.floor(diff / 1000);
+    d.textContent = pad(Math.floor(t / 86400));
+    h.textContent = pad(Math.floor(t % 86400 / 3600));
+    m.textContent = pad(Math.floor(t % 3600 / 60));
+    s.textContent = pad(t % 60);
+  }
+  timer = setInterval(tick, 1000); tick();
+
+  // copy phone number
+  var copy = document.getElementById('copy'), phone = document.getElementById('phone');
+  function selectPhone() {
+    var r = document.createRange(); r.selectNodeContents(phone);
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+  }
+  copy.addEventListener('click', function () {
+    var done = function (msg) { copy.textContent = msg; setTimeout(function () { copy.textContent = 'Copy number'; }, 1800); };
+    try {
+      navigator.clipboard.writeText('9557445454').then(function () { done('Copied'); }, function () { selectPhone(); done('Selected'); });
+    } catch (e) { selectPhone(); done('Selected'); }
+  });
+
+  // drifting gold motes
+  var cv = document.getElementById('motes'), ctx = cv.getContext('2d'), dots = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function size() {
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var count = Math.max(28, Math.min(70, Math.round(W * H / 14000)));
+    dots = [];
+    for (var i = 0; i < count; i++) dots.push({
+      x: Math.random() * W, y: Math.random() * H, r: 0.6 + Math.random() * 1.8,
+      v: 0.12 + Math.random() * 0.35, sway: Math.random() * Math.PI * 2, ph: Math.random() * Math.PI * 2
+    });
+  }
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < dots.length; i++) {
+      var p = dots[i];
+      if (!reduce) { p.y -= p.v; p.x += Math.sin(t / 2200 + p.sway) * 0.25; if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; } }
+      var a = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(t / 900 + p.ph));
+      ctx.beginPath(); ctx.fillStyle = 'rgba(241,217,143,' + a.toFixed(3) + ')';
+      ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+    }
+  }
+  size(); window.addEventListener('resize', size);
+  if (reduce) { draw(0); }
+  else (function loop(t) { if (!document.hidden) draw(t); requestAnimationFrame(loop); })(0);
+})();
+</script>
+
+</body></html>
