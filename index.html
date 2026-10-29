@@ -95,10 +95,15 @@
   .invite-ml { font-size: clamp(1.1rem, 4vw, 1.3rem); color: var(--ivory); margin: 0 0 0.8rem; }
   .hero .names { margin: clamp(1.6rem, 6vw, 2.6rem) 0; display: grid; justify-items: center; gap: 0.1rem; }
   .name {
-    display: block; overflow: hidden; padding: 0.06em 0.08em 0.14em;
+    display: block; white-space: nowrap; overflow: hidden; padding: 0.06em 0.08em 0.14em;
     font-family: var(--f-display); font-style: italic; font-weight: 400;
-    font-size: clamp(2.5rem, 12vw, 5rem); line-height: 1.05; letter-spacing: -0.01em;
+    font-size: clamp(1.85rem, 8.5vw, 4.2rem); line-height: 1.05; letter-spacing: -0.025em;
     color: var(--ivory); max-width: 100%;
+  }
+
+  /* Keep the full names on one line on narrow phone screens */
+  @media (max-width: 380px) {
+    .name { font-size: clamp(1.55rem, 7.8vw, 2rem); letter-spacing: -0.035em; }
   }
   .name .ch { display: inline-block; }
   .amp {
@@ -254,7 +259,7 @@
   <section data-reveal>
     <p class="eyebrow">With the blessings of Allah</p>
     <h2>Please join us</h2>
-    <p>With the blessings of Almighty Allah, we, the family of the bride, warmly invite you and your family to the wedding of our dear Rishana, granddaughter of Cheriyath Moideen, with Nihal Muhammed. Your presence and duas will make the day complete.</p>
+    <p>With the blessings of Almighty Allah, we, the family of the bride, warmly invite you and your family to the wedding of our dear Rishana, daughter of Ashraf N K, with Nihal Muhammed. Your presence and duas will make the day complete.</p>
     <p class="ml" style="color:var(--gold-soft)">ഞങ്ങളുടെ കുടുംബത്തിലെ വിവാഹത്തിലേക്ക് നിങ്ങളെ സ്നേഹപൂർവം ക്ഷണിക്കുന്നു.</p>
   </section>
 
@@ -298,7 +303,7 @@
   </section>
 
   <footer data-reveal>
-    <div class="sign">With love and duas, the family of Cheriyath Moideen</div>
+    <div class="sign">With love and duas, the family of N.K Family</div>
     <p class="ml" style="color:var(--gold-soft);margin:0">സ്നേഹത്തോടെ</p>
     <button class="btn replay" id="replay" type="button">Replay opening</button>
   </footer>
